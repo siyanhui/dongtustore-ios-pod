@@ -71,6 +71,19 @@ typedef enum
  */
 - (void)tapOverlay;
 
+@optional
+
+
+/**
+ replace the emoji symbol in the emoji keybaord with a custome image
+ */
+- (UIImage *_Nullable)imageForEmojiSymbol:(nonnull NSString *)emojiSymbol;
+
+/**
+ provide a custom image for the emoji tab icon
+ */
+- (UIImage *_Nullable)provideUnicodeEmojiTabIcon;
+
 @end
 
 
@@ -95,6 +108,7 @@ typedef enum
  *  DongTuStore Singleton
  */
 + (nonnull instancetype)sharedInstance;
+
 
 /**
  *  initialize SDK
@@ -167,6 +181,17 @@ typedef enum
  *  @param enable       enable
  */
 - (void)setUnicodeEmojiTabEnabled: (BOOL)enable;
+
+/**
+ *  fetch emojis according to emoji type and emoji code
+ *
+ *  @param fetchType         emoji type
+ *  @param emojiCodes        a collection of emoji code
+ *  @param completionHandler complition handler  emojis: a collection of MMEmoji or error object
+ */
+- (void)fetchEmojisByType:(DTFetchType)fetchType
+                    codes:(nonnull NSArray *)emojiCodes
+        completionHandler:(void (^ __nullable )(NSArray * __nullable emojis))completionHandler;
 
 /**
  查看是否已经收藏了emoji
