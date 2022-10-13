@@ -9,9 +9,9 @@ Pod::Spec.new do |s|
   s.homepage         = "https://dongtu.com"
   s.license          = 'MIT'
   s.author           = { "Teng" => "tengwork1@163.com" }
-  s.source           = { :git => "https://github.com/siyanhui/dongtustore-ios-pod.git", :tag => s.version.to_s }
+  s.source           = { :git => "git@github.com:siyanhui/dongtustore-ios-pod.git", :tag => s.version.to_s }
 
-  s.platform     = :ios, '8.0'
+  s.platform     = :ios, '9.0'
   s.requires_arc = true
 
   s.resources = [ 'DongtuStoreSDK.bundle' ]
